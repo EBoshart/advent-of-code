@@ -26,4 +26,22 @@ public class DayTwoTest {
 
 	}
 
+	@Test
+	public void getCommonCharacters_two_strings() {
+		String a = "abcdef";
+		String b = "abcxef";
+		DayTwo dayTwo = new DayTwo(Arrays.asList(a, b));
+		String result = dayTwo.getCommonCharacters();
+		assertEquals("abcef", result);
+	}
+
+	@Test
+	public void getCommonCharacters_multiple_strings() {
+
+		List<String> strings = Arrays.asList("abcde", "fghij", "klmno", "pqrst", "fguij", "axcye",  "wvxyz");
+		DayTwo dayTwo = new DayTwo(strings);
+		String result = dayTwo.getCommonCharacters();
+		assertEquals("fgij", result);
+	}
+
 }
