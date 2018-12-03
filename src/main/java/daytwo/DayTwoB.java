@@ -44,7 +44,7 @@ public class DayTwoB {
 	}
 
 	public static void main(String[] args) throws IOException {
-		DayTwoB dayTwoB = new DayTwoB(Files.readAllLines(Paths.get("src/main/resources/data.text")));
+		DayTwoB dayTwoB = new DayTwoB(Files.readAllLines(Paths.get("src/main/resources/day-two-data.txt")));
 		System.out.println(dayTwoB.getCommonCharacters());
 	}
 }
