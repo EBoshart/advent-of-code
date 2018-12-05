@@ -1,11 +1,13 @@
-package daytwo;
+package days;
 
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
 import java.util.stream.*;
 
-public class DayTwo {
+import base.*;
+
+public class DayTwo extends Base {
 
 	private List<String> data;
 	private int twoCount;
@@ -15,7 +17,7 @@ public class DayTwo {
 		this.data =data;
 	}
 
-	public Integer getCheckSum() {
+	public Integer getAnswerPartOne() {
 		data.forEach(this::checkString);
 		return twoCount*threeCount;
 	}
@@ -28,7 +30,7 @@ public class DayTwo {
 			threeCount++;
 	}
 
-	public String getCommonCharacters() {
+	public String getAnswerPartTwo() {
 		for(int i=0; i<data.size()-1; i++) {
 			for(int j=i+1; j<data.size(); j++) {
 				String result = checkStrings(data.get(i), data.get(j));
@@ -62,8 +64,8 @@ public class DayTwo {
 
 	public static void main(String[] args) throws IOException {
 		DayTwo dayTwo = new DayTwo(Files.readAllLines(Paths.get("src/main/resources/day-two-data.txt")));
-		System.out.println(dayTwo.getCheckSum());
-		System.out.println(dayTwo.getCommonCharacters());
+		System.out.println(dayTwo.getAnswerPartOne());
+		System.out.println(dayTwo.getAnswerPartTwo());
 
 	}
 }

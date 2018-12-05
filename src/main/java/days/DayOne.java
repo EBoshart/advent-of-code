@@ -1,10 +1,12 @@
-package dayone;
+package days;
 
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
 
-public class DayOne {
+import base.*;
+
+public class DayOne extends Base {
 
 	private final List<String> data;
 
@@ -12,11 +14,13 @@ public class DayOne {
 		this.data = data;
 	}
 
-	public int getSum() {
+	@Override
+	public Integer getAnswerPartOne() {
 		return this.data.stream().mapToInt(Integer::parseInt).sum();
 	}
 
-	public int getFirstRepeatedFrequency() {
+	@Override
+	public Integer getAnswerPartTwo() {
 		Set<Integer> frequencies = new HashSet<>();
 		frequencies.add(0);
 		int index = 0;
@@ -35,7 +39,7 @@ public class DayOne {
 
 	public static void main(String[] args) throws IOException {
 		DayOne dayOne = new DayOne(Files.readAllLines(Paths.get("src/main/resources/day-one-data.txt")));
-		System.out.println(dayOne.getSum());
-		System.out.println(dayOne.getFirstRepeatedFrequency());
+		System.out.println(dayOne.getAnswerPartOne());
+		System.out.println(dayOne.getAnswerPartTwo());
 	}
 }

@@ -1,9 +1,10 @@
-package daythree;
+package days.day3;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.*;
 
+import days.*;
 import org.junit.jupiter.api.*;
 
 public class DayThreeTest {
@@ -13,7 +14,7 @@ public class DayThreeTest {
 
 		List<String> data = Arrays.asList("#1 @ 1, 1: 1x1", "#2 @ 1,1: 2x2");
 		DayThree dayThree =  new DayThree(data);
-		long result = dayThree.calculateOverlappingSquares();
+		long result = dayThree.getAnswerPartOne();
 		assertEquals(1, result);
 
 	}
@@ -22,7 +23,7 @@ public class DayThreeTest {
 	public void calculateOverlappingSquares_with_more_input() {
 		List<String> data = Arrays.asList("#1 @ 1,3: 4x4", "#2 @ 3,1: 4x4", "#3 @ 5,5: 2x2");
 		DayThree dayThree =  new DayThree(data);
-		long result = dayThree.calculateOverlappingSquares();
+		long result = dayThree.getAnswerPartOne();
 		assertEquals(4, result);
 	}
 
@@ -33,7 +34,7 @@ public class DayThreeTest {
 
 		List<String> data = Arrays.asList("#1 @ 1, 1: 1x1", "#2 @ 1,1: 2x2", "#3 @ 4, 4: 2x2");
 		DayThree dayThree =  new DayThree(data);
-		String  result = dayThree.getUniqueSquareId();
+		String  result = dayThree.getAnswerPartTwo();
 		assertEquals("#3", result);
 
 	}

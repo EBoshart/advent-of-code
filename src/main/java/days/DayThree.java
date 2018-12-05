@@ -1,11 +1,13 @@
-package daythree;
+package days;
 
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
 import java.util.stream.*;
 
-public class DayThree {
+import base.*;
+
+public class DayThree extends Base {
 
 	public static class Square {
 
@@ -66,7 +68,7 @@ public class DayThree {
 		this.squares = squares.stream().map(Square::fromString).collect(Collectors.toList());
 	}
 
-	public long calculateOverlappingSquares() {
+	public Long getAnswerPartOne() {
 
 		return getFilledMap().values().stream().filter(v -> v.size() > 1).count();
 	}
@@ -88,7 +90,7 @@ public class DayThree {
 		return countsOfFilledPoints;
 	}
 
-	public String getUniqueSquareId() {
+	public String getAnswerPartTwo() {
 
 		List<String> ids = squares.stream().map(square ->  square.id).collect(Collectors.toList());
 		getFilledMap().values().forEach(entry -> {
@@ -101,9 +103,9 @@ public class DayThree {
 
 	public static void main(String[] args) throws IOException {
 
-		DayThree dayThree = new DayThree(Files.readAllLines(Paths.get("src/main/resources/day-three-squares.txt")));
-		System.out.println(dayThree.calculateOverlappingSquares());
-		System.out.println(dayThree.getUniqueSquareId());
+		DayThree dayThree = new DayThree(Files.readAllLines(Paths.get("src/main/resources/day-three-data.txt")));
+		System.out.println(dayThree.getAnswerPartOne());
+		System.out.println(dayThree.getAnswerPartTwo());
 
 	}
 }
