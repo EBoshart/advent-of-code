@@ -1,10 +1,10 @@
-package days.day3;
+package days;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.*;
 
-import days.*;
+import advent.days.*;
 import org.junit.jupiter.api.*;
 
 public class DayThreeTest {

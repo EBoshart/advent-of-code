@@ -1,10 +1,10 @@
-package days.day2;
+package days;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.*;
 
-import days.*;
+import advent.days.*;
 import org.junit.jupiter.api.*;
 
 public class DayTwoTest {

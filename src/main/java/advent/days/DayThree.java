@@ -1,12 +1,11 @@
-package days;
+package advent.days;
 
-import java.io.*;
-import java.nio.file.*;
 import java.util.*;
 import java.util.stream.*;
 
-import base.*;
+import advent.base.*;
 
+@Solve
 public class DayThree extends Base {
 
 	public static class Square {
@@ -68,6 +67,7 @@ public class DayThree extends Base {
 		this.squares = squares.stream().map(Square::fromString).collect(Collectors.toList());
 	}
 
+	@Override
 	public Long getAnswerPartOne() {
 
 		return getFilledMap().values().stream().filter(v -> v.size() > 1).count();
@@ -90,6 +90,7 @@ public class DayThree extends Base {
 		return countsOfFilledPoints;
 	}
 
+	@Override
 	public String getAnswerPartTwo() {
 
 		List<String> ids = squares.stream().map(square ->  square.id).collect(Collectors.toList());
@@ -99,13 +100,5 @@ public class DayThree extends Base {
 			}
 		});
 		return ids.get(0);
-	}
-
-	public static void main(String[] args) throws IOException {
-
-		DayThree dayThree = new DayThree(Files.readAllLines(Paths.get("src/main/resources/day-three-data.txt")));
-		System.out.println(dayThree.getAnswerPartOne());
-		System.out.println(dayThree.getAnswerPartTwo());
-
 	}
 }

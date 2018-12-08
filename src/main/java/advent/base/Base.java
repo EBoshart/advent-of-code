@@ -1,4 +1,4 @@
-package base;
+package advent.base;
 
 
 public abstract class Base {

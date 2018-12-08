@@ -1,8 +1,8 @@
-package days.day5;
+package days;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-import days.*;
+import advent.days.*;
 import org.junit.jupiter.api.*;
 
 public class DayFiveTest {

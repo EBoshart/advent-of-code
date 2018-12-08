@@ -1,27 +1,24 @@
-package days;
+package advent.days;
 
-import java.io.*;
-import java.nio.file.*;
 import java.util.*;
 import java.util.stream.*;
 
-import base.*;
+import advent.base.*;
 
+@Solve
 public class DayFour extends Base {
 
 	private List<String> data;
 
 	public DayFour(List<String> data) {
+
 		Collections.sort(data);
 		this.data = data;
 	}
 
-	public static class GuardData {
-		Integer totalMinutesSlept;
-		Map<Integer, Integer> numberOfTimesSleptAtMinute = new HashMap<>();
-	}
-
+	@Override
 	public Integer getAnswerPartOne() {
+
 		Map<Integer, GuardData> sleepTimeByGuardId = getGuardsWithMinutesAsleepMap();
 		Map.Entry<Integer, GuardData> maxEntry =sleepTimeByGuardId.entrySet().stream().max(Comparator.comparing(a -> a.getValue().totalMinutesSlept)).get();
 		int guard = maxEntry.getKey();
@@ -29,7 +26,9 @@ public class DayFour extends Base {
 		return guard * minute.getKey();
 	}
 
+	@Override
 	public Integer getAnswerPartTwo() {
+
 		Map<Integer, GuardData> sleepTimeByGuardId = getGuardsWithMinutesAsleepMap();
 		Map.Entry<Integer, GuardData> maxEntry =sleepTimeByGuardId.entrySet().stream().max(Comparator.comparing(a -> a.getValue().numberOfTimesSleptAtMinute.values().stream().max(Integer::compareTo).get())).get();
 		int guard = maxEntry.getKey();
@@ -39,6 +38,7 @@ public class DayFour extends Base {
 	}
 
 	private Map<Integer, GuardData> getGuardsWithMinutesAsleepMap() {
+
 		Map<Integer, GuardData> sleepTimeByGuardId = new HashMap<>();
 		Integer currentGuard = null;
 		int fallsAsleepAtMinute = 0;
@@ -66,11 +66,9 @@ public class DayFour extends Base {
 		return sleepTimeByGuardId;
 	}
 
-	public static void main(String[] args) throws IOException {
-		DayFour dayFour = new DayFour(Files.readAllLines(Paths.get("src/main/resources/day-four-data.txt")));
+	public static class GuardData {
 
-		System.out.println(dayFour.getAnswerPartOne());
-		System.out.println(dayFour.getAnswerPartTwo());
+		Integer totalMinutesSlept;
+		Map<Integer, Integer> numberOfTimesSleptAtMinute = new HashMap<>();
 	}
-
 }

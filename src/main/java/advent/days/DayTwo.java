@@ -1,12 +1,11 @@
-package days;
+package advent.days;
 
-import java.io.*;
-import java.nio.file.*;
 import java.util.*;
 import java.util.stream.*;
 
-import base.*;
+import advent.base.*;
 
+@Solve
 public class DayTwo extends Base {
 
 	private List<String> data;
@@ -17,7 +16,9 @@ public class DayTwo extends Base {
 		this.data =data;
 	}
 
+	@Override
 	public Integer getAnswerPartOne() {
+
 		data.forEach(this::checkString);
 		return twoCount*threeCount;
 	}
@@ -30,9 +31,11 @@ public class DayTwo extends Base {
 			threeCount++;
 	}
 
+	@Override
 	public String getAnswerPartTwo() {
-		for(int i=0; i<data.size()-1; i++) {
-			for(int j=i+1; j<data.size(); j++) {
+
+		for (int i = 0; i < data.size() - 1; i++) {
+			for (int j = i + 1; j < data.size(); j++) {
 				String result = checkStrings(data.get(i), data.get(j));
 				if(result != null) {
 					return result;
@@ -59,13 +62,5 @@ public class DayTwo extends Base {
 		}
 
 		return a.substring(0, indexOfDifferentChar) + a.substring(indexOfDifferentChar + 1);
-	}
-
-
-	public static void main(String[] args) throws IOException {
-		DayTwo dayTwo = new DayTwo(Files.readAllLines(Paths.get("src/main/resources/day-two-data.txt")));
-		System.out.println(dayTwo.getAnswerPartOne());
-		System.out.println(dayTwo.getAnswerPartTwo());
-
 	}
 }
