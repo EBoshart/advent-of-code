@@ -6,7 +6,7 @@ import java.util.stream.*;
 import advent.base.*;
 
 @Solve
-public class DayFour extends Base {
+public class DayFour implements Base {
 
 	private List<String> data;
 

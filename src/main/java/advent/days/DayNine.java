@@ -6,7 +6,7 @@ import java.util.stream.*;
 import advent.base.*;
 
 @Solve
-public class DayNine extends Base {
+public class DayNine implements Base {
 
 	private int turns = 71920;
 	private int amountOfPlayers = 403;

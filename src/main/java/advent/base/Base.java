@@ -1,6 +1,6 @@
 package advent.base;
 
-public abstract class Base {
+public interface Base {
 
 	public abstract Object getAnswerPartOne();
 

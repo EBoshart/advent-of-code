@@ -5,7 +5,7 @@ import java.util.*;
 import advent.base.*;
 
 @Solve
-public class DayOne extends Base {
+public class DayOne implements Base {
 
 	private final List<String> data;
 

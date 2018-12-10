@@ -8,7 +8,7 @@ import java.util.stream.*;
 import advent.base.*;
 
 @Solve
-public class DaySeven extends Base {
+public class DaySeven implements Base {
 
 	public static Integer AMOUNT_OF_WORKERS = 5;
 	public static Integer BASE_JOB_TIME = 60;

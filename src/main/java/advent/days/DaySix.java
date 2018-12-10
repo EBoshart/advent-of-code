@@ -8,7 +8,7 @@ import java.util.stream.*;
 import advent.base.*;
 
 @Solve
-public class DaySix extends Base {
+public class DaySix implements Base {
 
 	public static Integer MAX_TOTAL_NEIGHBOUR_DISTANCE = 10000;
 

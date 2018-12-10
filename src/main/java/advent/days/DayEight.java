@@ -4,7 +4,7 @@ import java.util.*;
 
 import advent.base.*;
 
-public class DayEight extends Base {
+public class DayEight implements Base {
 
 	private List<Integer> numbers = new ArrayList<>();
 
