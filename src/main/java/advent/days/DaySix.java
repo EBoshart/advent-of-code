@@ -23,6 +23,7 @@ public class DaySix extends Base {
 		}
 
 	}
+
 	private List<Coordinate> coordinates = new ArrayList<>();
 	private String[][] grid;
 

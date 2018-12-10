@@ -19,6 +19,7 @@ public class DaySeven extends Base {
 		DaySeven daySeven = new DaySeven(data);
 		System.out.println(daySeven.getAnswerPartTwo());
 	}
+
 	private List<String> data;
 	private Map<Character, List<Character>> map = new TreeMap<>();
 

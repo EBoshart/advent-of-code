@@ -9,6 +9,7 @@ public class DayFiveTest {
 
 	@Test
 	public void getStringWithoutPolarizedCharacters_with_simple_input() {
+
 		DayFive dayFive = new DayFive("dabAcCaCBAcCcaDA");
 		int result = dayFive.getAnswerPartOne();
 		assertEquals("dabCBAcaDA".length(), result);
@@ -16,6 +17,7 @@ public class DayFiveTest {
 
 	@Test
 	public void getLengthOfStringWithoutPolarizedCharactersAfterRemovingBestCharacter() {
+
 		DayFive dayFive = new DayFive("dabAcCaCBAcCcaDA");
 		int result = dayFive.getAnswerPartTwo();
 		assertEquals(4, result);

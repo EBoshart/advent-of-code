@@ -22,18 +22,6 @@ public class DayEight extends Base {
 		return getMetaDataSum(numbers).sum;
 	}
 
-	public static class SumIndexPair {
-
-		public int length;
-		public int sum;
-
-		public SumIndexPair(int length, int sum) {
-
-			this.length = length;
-			this.sum = sum;
-		}
-	}
-
 	private SumIndexPair getValueRootNode(List<Integer> integers) {
 
 		int childNodes = integers.get(0);
@@ -88,5 +76,17 @@ public class DayEight extends Base {
 	public Integer getAnswerPartTwo() {
 
 		return getValueRootNode(numbers).sum;
+	}
+
+	public static class SumIndexPair {
+
+		public int length;
+		public int sum;
+
+		public SumIndexPair(int length, int sum) {
+
+			this.length = length;
+			this.sum = sum;
+		}
 	}
 }

@@ -13,19 +13,28 @@ public class Main {
 
 		final ClassLoader loader = Thread.currentThread().getContextClassLoader();
 		for (final ClassPath.ClassInfo info : ClassPath.from(loader).getTopLevelClassesRecursive("advent")) {
-			Class<?> test = info.load();
-			if (test.isAnnotationPresent(Solve.class)) {
+			Class<?> clazz = info.load();
 
-				Constructor<?> cons = test.getConstructor(List.class);
-				String day = test.getSimpleName().substring(3).toLowerCase();
+			if (clazz.isAnnotationPresent(Solve.class)) {
+				String day = clazz.getSimpleName().substring(3).toLowerCase();
+				Path path = Paths.get("src/main/resources/day-" + day + "-data.txt");
 
-				List<String> data = Files.readAllLines(Paths.get("src/main/resources/day-" + day + "-data.txt"));
+				Object object;
+				Constructor<?> cons;
 
-				System.out.println(test.getSimpleName() + "\n" + "answer1: " + test.getDeclaredMethod("getAnswerPartOne").invoke(cons.newInstance(data)) + "\n" + "answer2: " + test.getDeclaredMethod("getAnswerPartTwo").invoke(cons.newInstance(data)) + "\n");
+				if (Files.exists(path)) {
+					cons = clazz.getConstructor(List.class);
+					List<String> data = Files.readAllLines(path);
+					object = cons.newInstance(data);
+				} else {
+					cons = clazz.getConstructor();
+					object = cons.newInstance();
+				}
 
-			}
+				System.out.println(clazz.getSimpleName() + "\n" + "answer1: " + clazz.getDeclaredMethod("getAnswerPartOne").invoke(object) + "\n" + "answer2: " + clazz.getDeclaredMethod("getAnswerPartTwo").invoke(object) + "\n");
 			}
 
 		}
+	}
 
 }

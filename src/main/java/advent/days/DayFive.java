@@ -24,13 +24,13 @@ public class DayFive extends Base {
 
 		int index = 0;
 
-		while(index != data.length()-1) {
+		while (index != data.length() - 1) {
 			Character previousChar = data.charAt(index);
-			Character currentChar = data.charAt(index+1);
+			Character currentChar = data.charAt(index + 1);
 
-			if(previousChar+32 == currentChar || previousChar-32 == currentChar) {
-				data = data.substring(0, index) + data.substring(index+2);
-				index = Math.max(0, index-1);
+			if (previousChar + 32 == currentChar || previousChar - 32 == currentChar) {
+				data = data.substring(0, index) + data.substring(index + 2);
+				index = Math.max(0, index - 1);
 			} else
 				index++;
 		}
@@ -39,9 +39,9 @@ public class DayFive extends Base {
 
 	public Integer getAnswerPartTwo() {
 
-		return IntStream.range(0,26).map(i -> {
-			char lowerCase = (char) ('a'+i);
-			char upperCase = (char) (i-32+'a');
+		return IntStream.range(0, 26).map(i -> {
+			char lowerCase = (char) ('a' + i);
+			char upperCase = (char) (i - 32 + 'a');
 
 			String s = ("" + lowerCase + upperCase);
 			return new DayFive(Collections.singletonList(data.replaceAll("[" + s + "]", ""))).getAnswerPartOne();

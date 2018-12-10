@@ -12,22 +12,24 @@ public class DayTwo extends Base {
 	private int twoCount;
 	private int threeCount;
 
-	public DayTwo(List<String> data ) {
-		this.data =data;
+	public DayTwo(List<String> data) {
+
+		this.data = data;
 	}
 
 	@Override
 	public Integer getAnswerPartOne() {
 
 		data.forEach(this::checkString);
-		return twoCount*threeCount;
+		return twoCount * threeCount;
 	}
 
 	private void checkString(String s) {
+
 		Map<Integer, Long> map = s.chars().boxed().collect(Collectors.groupingBy(x -> x, Collectors.counting()));
-		if(map.values().contains(2L))
+		if (map.values().contains(2L))
 			twoCount++;
-		if(map.values().contains(3L))
+		if (map.values().contains(3L))
 			threeCount++;
 	}
 
@@ -37,7 +39,7 @@ public class DayTwo extends Base {
 		for (int i = 0; i < data.size() - 1; i++) {
 			for (int j = i + 1; j < data.size(); j++) {
 				String result = checkStrings(data.get(i), data.get(j));
-				if(result != null) {
+				if (result != null) {
 					return result;
 				}
 			}

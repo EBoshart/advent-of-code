@@ -27,14 +27,14 @@ public class DayOne extends Base {
 		frequencies.add(0);
 		int index = 0;
 		Integer oldFrequency = 0;
-		while(true) {
+		while (true) {
 			int newFrequency = oldFrequency + Integer.parseInt(data.get(index));
-			if(frequencies.contains(newFrequency))
+			if (frequencies.contains(newFrequency))
 				return newFrequency;
 			frequencies.add(newFrequency);
 			index++;
 			oldFrequency = newFrequency;
-			if(index == data.size())
+			if (index == data.size())
 				index = 0;
 		}
 	}

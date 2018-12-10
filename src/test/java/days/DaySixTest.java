@@ -1,6 +1,6 @@
 package days;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.*;
 
@@ -12,13 +12,7 @@ public class DaySixTest {
 	@Test
 	public void getAnswerPartOne_simple_input() {
 
-		List<String> data = Arrays.asList(
-		"1, 1",
-		"1, 6",
-		"8, 3",
-		"3, 4",
-		"5, 5",
-		"8, 9");
+		List<String> data = Arrays.asList("1, 1", "1, 6", "8, 3", "3, 4", "5, 5", "8, 9");
 
 		DaySix daySix = new DaySix(data);
 		int result = daySix.getAnswerPartOne();
@@ -28,13 +22,7 @@ public class DaySixTest {
 	@Test
 	public void getAnswerPartTwo_simple_input() {
 
-		List<String> data = Arrays.asList(
-				"1, 1",
-				"1, 6",
-				"8, 3",
-				"3, 4",
-				"5, 5",
-				"8, 9");
+		List<String> data = Arrays.asList("1, 1", "1, 6", "8, 3", "3, 4", "5, 5", "8, 9");
 
 		DaySix daySix = new DaySix(data);
 		DaySix.MAX_TOTAL_NEIGHBOUR_DISTANCE = 32;

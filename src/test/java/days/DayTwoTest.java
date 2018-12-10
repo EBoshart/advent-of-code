@@ -29,6 +29,7 @@ public class DayTwoTest {
 
 	@Test
 	public void getCommonCharacters_two_strings() {
+
 		String a = "abcdef";
 		String b = "abcxef";
 		DayTwo dayTwo = new DayTwo(Arrays.asList(a, b));
@@ -39,7 +40,7 @@ public class DayTwoTest {
 	@Test
 	public void getCommonCharacters_multiple_strings() {
 
-		List<String> strings = Arrays.asList("abcde", "fghij", "klmno", "pqrst", "fguij", "axcye",  "wvxyz");
+		List<String> strings = Arrays.asList("abcde", "fghij", "klmno", "pqrst", "fguij", "axcye", "wvxyz");
 		DayTwo dayTwo = new DayTwo(strings);
 		String result = dayTwo.getAnswerPartTwo();
 		assertEquals("fgij", result);
